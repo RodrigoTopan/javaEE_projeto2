@@ -13,35 +13,34 @@
         <title>Amortização Price</title>
     </head>
     <body>
-        <h1><center>Tabela price</center></h1>
+        <h1><center>Tabela Price</center></h1>
         
-        <!-- Criação do formulário de amortização americana -->
+        <!-- Criação do formulário de amortização price -->
         <center>
             <div>
-                <form name="frmAmericano">
-                    Saldo devedor:<br/>
+                <form name="frmPrice">
+                    Valor:<br/>
                     <input type="text" name="txtSaldo" placeholder="Digite o valor do empréstimo"/>
                     <br/>
-                    Período de pagamento (meses):<br/>
+                    Tempo(meses):<br/>
                     <input type="text" name="txtPeriodo" placeholder="Digite o período para quitar"/>
                     <br/>
                     Taxa de Juros:<br/>
                     <input type="text" name="txtJuros" placeholder="Digite a taxa de juros"/>
                     <br/>
-                    <input type="submit" name="btnCalcular" value="Exibir tabela"/>
+                    <input type="submit" name="btnCalcular" value="Calcular"/>
                 </form>
             </div>
             <br/>
             
             <%
             
-            //iniciando try/ catch para criar tabela de amortização
+            //iniciando try/ catch para criar tab. de amortização
             try
             {
-                //utilizando biblioteca de formatação de casas decimais
                 DecimalFormat formata = new DecimalFormat("###,###,###,###,###.##");
                 
-                //criação das variáveis para capturar valores do formulário
+                
                 String parametroCalcular = request.getParameter("btnCalcular");
                 double saldo = 0.00, juros = 0.00, CalculoJuros = 0.00, PMT = 0.00,
                 prestacao = 0.00, Amortizacao = 0.00, jurosParcela = 0.00;                
@@ -62,10 +61,10 @@
                     CalculoJuros = Math.pow((1 + (juros / 100)), periodo);
                     PMT = saldo * ((CalculoJuros * (juros / 100)) / (CalculoJuros - 1));
                     
-                    //retirando valor dos juros do primeiro mÊs
+                    //retirando valor dos juros do primeiro mês
                     jurosParcela = saldo * (juros / 100);
                     
-                    //fixando valores do primeiro mês de quitação
+                    //inserindo valores do primeiro mês de quitação
                     novoJuros[0] = jurosParcela;
                     novaAmortizacao[0] = PMT - novoJuros[0];
                     novoSaldo[0] = saldo - novaAmortizacao[0];
@@ -73,11 +72,11 @@
                 %>            
                     <table border='1'>
                                 <tr>
-                                    <th>Mês</th>
-                                    <th>Saldo Devedor</th>
-                                    <th>Amortização</th>
-                                    <th>Juros</th>
-                                    <th>Prestação</th>
+                                    <th bgcolor="YELLOW">Mês</th>
+                                    <th bgcolor="YELLOW">Saldo Devedor</th>
+                                    <th bgcolor="YELLOW">Amortização</th>
+                                    <th bgcolor="YELLOW">Juros</th>
+                                    <th bgcolor="YELLOW">Prestação</th>
                                 </tr> 
                                 <tr>
                                     <td><center>0</center></td>
