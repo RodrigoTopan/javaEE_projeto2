@@ -143,7 +143,7 @@
               </table>
             <%}%> 
         <%}catch(Exception ex){
-                out.println("Número(s) invalido(s)");
+                out.println("Número(s) invalido");
                }
             %>
     </div>
