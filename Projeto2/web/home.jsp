@@ -1,7 +1,7 @@
 <%-- 
     Document   : home
     Created on : 09/09/2017, 09:50:56
-    Author     : Raul
+    Author     : Rodrigo
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -26,11 +26,10 @@
   color: #fff;
   font-weight: bolder;
   height: 176px;
-
 }
 .demo-card-wide > .mdl-card__menu {
   color:#fff;
-}
+ }
 </style>
     </head>
      <body>
@@ -51,7 +50,7 @@
         </div><!--/.navbar-collapse -->
       </div>
     </nav>
-
+         <br><br>
     <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="jumbotron" align="center">
       <div class="container">
@@ -70,17 +69,17 @@
         <div class="col-md-4">
           <h2>Americana</h2>
           <p>O Sistema Americano de Amortização é um tipo de quitação de empréstimo que favorece aqueles que desejam pagar o valor principal através de uma única parcela, porém os juros devem ser pagos periodicamente ou, dependendo do contrato firmado entre as partes, os juros são capitalizados e pagos junto ao valor principal.</p>
-          <p><a class="btn btn-default" href="#" role="button">Saiba Mais &raquo;</a></p>
+          <p><a class="btn btn-default" href="amortizacao-americana.jsp" role="button">Saiba Mais &raquo;</a></p>
         </div>
         <div class="col-md-4">
           <h2>Price</h2>
           <p>Os financiamentos utilizando a tabela Price são oferecidos com o propósito de prestações fixas ao longo do período de quitação do bem, sem aumento por algum tipo de correção (dependendo do contrato de financiamento). O método Price consiste em calcular prestações fixas.</p>
-          <p><a class="btn btn-default" href="#" role="button">Saiba Mais &raquo;</a></p>
+          <p><a class="btn btn-default" href="pricev3.jsp" role="button">Saiba Mais &raquo;</a></p>
        </div>
         <div class="col-md-4">
           <h2>Constante</h2>
           <p> As instituições financeiras oferecem um capital que deverá ser devolvido com juros durante o período pré-determinado. O funcionamento do sistema de amortizações constantes, que consiste no pagamento da dívida baseada em parcelas de amortizações iguais com prestações e juros decrescentes. </p>
-          <p><a class="btn btn-default" href="#" role="button">Saiba Mais &raquo;</a></p>
+          <p><a class="btn btn-default" href="amortizacao-constante.jsp" role="button">Saiba Mais &raquo;</a></p>
         </div>
       </div>
       <hr>
