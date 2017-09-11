@@ -4,57 +4,122 @@
     Author     : Rodrigo
 --%>
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="java.text.DecimalFormat"%>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Amortização Price</title>
     </head>
     <body>
-    <center>
-        <h1>Tabela Price!</h1>
-        <form>
-            Valor:
-            <input type="text" name="valor" value='1000'/>
-            Taxa:
-            <input type="text" name="taxa" value='1'/>
-            Meses:
-            <input type="text" name="meses" velue='1'/><br>
-            <input type="submit" value="calcular"/>
-        </form>
+        <h1><center>Tabela price</center></h1>
+        
+        <!-- Criação do formulário de amortização americana -->
+        <center>
+            <div>
+                <form name="frmAmericano">
+                    Saldo devedor:<br/>
+                    <input type="text" name="txtSaldo" placeholder="Digite o valor do empréstimo"/>
+                    <br/>
+                    Período de pagamento (meses):<br/>
+                    <input type="text" name="txtPeriodo" placeholder="Digite o período para quitar"/>
+                    <br/>
+                    Taxa de Juros:<br/>
+                    <input type="text" name="txtJuros" placeholder="Digite a taxa de juros"/>
+                    <br/>
+                    <input type="submit" name="btnCalcular" value="Exibir tabela"/>
+                </form>
+            </div>
+            <br/>
+            
+            <%
+            
+            //iniciando try/ catch para criar tabela de amortização
+            try
+            {
+                //utilizando biblioteca de formatação de casas decimais
+                DecimalFormat formata = new DecimalFormat("###,###,###,###,###.##");
+                
+                //criação das variáveis para capturar valores do formulário
+                String parametroCalcular = request.getParameter("btnCalcular");
+                double saldo = 0.00, juros = 0.00, CalculoJuros = 0.00, PMT = 0.00,
+                prestacao = 0.00, Amortizacao = 0.00, jurosParcela = 0.00;                
+                int periodo = 0; 
+                String semValor = "-";   
 
-          <%  
-           DecimalFormat formata = new DecimalFormat("###,###,###,###,###.##");
-              String valor=request.getParameter("valor");
-            String taxa= request.getParameter("taxa");
-            String meses= request.getParameter("meses");
-           double saldo_dev=1;
-           double prest =1;                                                                      
-           double ms =1; 
-           double tx=1;
-           double va=1;
-           double amort=1;
-           double jur=1;
-            if(valor!= null | taxa != null | meses != null){
-             va = Double.parseDouble(valor);
-             tx = ((Double.parseDouble(taxa))/100);
-             ms = Double.parseDouble(meses);
-             amort = (va/ms);  }            
-             else
-             out.print("<h1>Não deixe espaços em branco, Digite apenas números</h1>"); 
-                  
-            for(int i=0; i<= ms ;i++){
-                    out.print("<table border='1'>");     
-        out.print("<tr><th>mes</th>  <th>Saldo a pagar</th>       <th>Amortização</th>       <th>Juros</th>         <th>Prestação</th></tr>");                    
-    out.print("<td>"+i+"</td>  <td>"+ formata.format(saldo_dev) +"</td>      <td>"+formata.format(amort)+"</td>     <td>"+formata.format(jur)+"</td>       <td>"+formata.format(prest)+"</td>"); 
-                  out.print("</table>"); 
-                   saldo_dev =(va-amort);
-               prest= ((saldo_dev*tx)+amort);
-               jur = (saldo_dev*tx);
-              }%>
-        </form> 
-   </center>
+                if (parametroCalcular != null) //se o submit for feito no form
+                {
+                    saldo = Double.parseDouble(request.getParameter("txtSaldo"));                
+                    periodo = Integer.parseInt(request.getParameter("txtPeriodo"));
+                    juros = Double.parseDouble(request.getParameter("txtJuros"));
+                    
+                    double[] novoSaldo = new double[periodo];
+                    double[] novoJuros = new double[periodo];
+                    double[] novaAmortizacao = new double[periodo];
+                    
+                    //realizando formula price para valor das prestações
+                    CalculoJuros = Math.pow((1 + (juros / 100)), periodo);
+                    PMT = saldo * ((CalculoJuros * (juros / 100)) / (CalculoJuros - 1));
+                    
+                    //retirando valor dos juros do primeiro mÊs
+                    jurosParcela = saldo * (juros / 100);
+                    
+                    //fixando valores do primeiro mês de quitação
+                    novoJuros[0] = jurosParcela;
+                    novaAmortizacao[0] = PMT - novoJuros[0];
+                    novoSaldo[0] = saldo - novaAmortizacao[0];
+                    
+                %>            
+                    <table border='1'>
+                                <tr>
+                                    <th>Mês</th>
+                                    <th>Saldo Devedor</th>
+                                    <th>Amortização</th>
+                                    <th>Juros</th>
+                                    <th>Prestação</th>
+                                </tr> 
+                                <tr>
+                                    <td><center>0</center></td>
+                                    <td><center><%= saldo %></center></td>
+                                    <td><center><%= semValor %></center></td>
+                                    <td><center><%= semValor %></center></td>
+                                    <td><center><%= semValor %></center></td>
+                                </tr>
+                                <tr>
+                                    <td><center>1</center></td>
+                                    <td><center><%= formata.format(novoSaldo[0]) %></center></td>
+                                    <td><center><%= formata.format(novaAmortizacao[0]) %></center></td>
+                                    <td><center><%= formata.format(novoJuros[0]) %></center></td>
+                                    <td><center><%= formata.format(PMT) %></center></td>
+                                </tr>
+                    <%   //lógica for começando a partir do segundo mês do empréstimo
+                        
+                        for (int i = 1; i < periodo; i++)
+                        {       
+                                novoJuros[i] = novoSaldo[i - 1] * (juros / 100); //calculando novo juros com saldo devedor novo
+                                novaAmortizacao[i] = PMT - novoJuros[i]; //nova amortização com base nos novos juros
+                                novoSaldo[i] = novoSaldo[i - 1] - novaAmortizacao[i]; //por fim, novo saldo para realizar calculo para próximo mês
+                            
+                            %>
+                                <tr>
+                                    <td><center><%= (i + 1) %></center></td>
+                                    <td><center><%= formata.format(novoSaldo[i]) %></center></td>
+                                    <td><center><%= formata.format(novaAmortizacao[i]) %></center></td>
+                                    <td><center><%= formata.format(novoJuros[i])%> </center></td>
+                                    <td><center><%= formata.format(PMT) %></center></td>
+                                </tr> 
+                            <%}%>
+                            </table>
+                        <%}%>  
+                
+                    
+            
+              
+            <%}
+            catch(Exception ex){ //devolvendo erro ao usuário caso tenha digitado letras%>
+            <span style="color: red"><h2>Digite apenas números!!!</h2></span>
+            <%}%>
+        </center>
     </body>
 </html>
