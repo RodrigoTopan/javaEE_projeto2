@@ -8,29 +8,68 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-    <head>
+     <head>     
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
         <title>Amortização Americana</title>
     </head>
     <body>
-        <h1><center>Amortização americana</center></h1>
-        
-        <!-- Criação do formulário de amortização americana -->
-        <center>
-            <div>
-                <form name="frmAmericano">
-                    Saldo devedor:<br/>
-                    <input type="text" name="txtSaldo" placeholder="Digite o valor do empréstimo"/>
-                    <br/>
-                    Período de pagamento (meses):<br/>
-                    <input type="text" name="txtPeriodo" placeholder="Digite o período para quitar"/>
-                    <br/>
-                    Taxa de Juros:<br/>
-                    <input type="text" name="txtJuros" placeholder="Digite a taxa de juros"/>
-                    <br/>
-                    <input type="submit" name="btnCalcular" value="Exibir tabela"/>
-                </form>
+ 
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">JAVA EE PROJETO 2</a></center>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <div class="nav navbar-nav">
+            <ul>
+                <li>Principal</li>
+                <li>Americana</li>
+                <li>Price</li>
+                <li>Constante</li>
+            </ul>
             </div>
+        </div><!--/.navbar-collapse -->
+      </div>
+    </nav>
+    <br><br>
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron" align="center">
+      <div class="container">
+        <h1>Amortização Americana</h1>
+        <p align="justify">O Sistema Americano de Amortização é um tipo de quitação de empréstimo que favorece aqueles que desejam pagar o valor principal através de uma única parcela, porém os juros devem ser pagos periodicamente ou, dependendo do contrato firmado entre as partes, os juros são capitalizados e pagos junto ao valor principal.</p>
+        <p><a class="btn btn-primary btn-lg" href="#" role="button"> Saiba mais &raquo;</a></p>
+      </div>
+    </div>
+    <div class="container">
+        <form class="form-inline" align="center">
+        <!-- Criação do formulário de amortização americana -->            
+        <div class="form-group">
+                    Saldo devedor:
+                    <input type="text" name="txtSaldo" class="form-control" placeholder="Digite o valor do empréstimo"/>
+        </div>
+        <div class="form-group">           
+                    Período de pagamento (meses):
+                    <input type="text" name="txtPeriodo" class="form-control" placeholder="Digite o período para quitar"/>
+        </div>
+        <div class="form-group">           
+                    Taxa de Juros:
+                    <input type="text" name="txtJuros" class="form-control" placeholder="Digite a taxa de juros"/>
+        </div>           
+                    <input type="submit" name="btnCalcular" class="form-control" value="Exibir tabela"/>
+                </form>
             <br/>
             
             <%
@@ -55,7 +94,7 @@
                     periodo = Integer.parseInt(request.getParameter("txtPeriodo"));
                     juros = Double.parseDouble(request.getParameter("txtJuros"));
                 %>            
-                    <table border='1'>
+                    <table class="table">
                                 <tr>
                                     <th>Mês</th>
                                     <th>Saldo Devedor</th>
