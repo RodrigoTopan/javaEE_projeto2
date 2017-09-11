@@ -127,7 +127,7 @@
     </div>
     </div>
       <footer>
-        <p>&copy; 2016 Company, Inc.</p>
+        <p>&copy; 2016 ADS, Inc.</p>
       </footer>
     </div> <!-- /container -->
 
