@@ -18,31 +18,7 @@
         <title>Amortização Constante</title>
     </head>
     <body>
- 
-
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">JAVA EE PROJETO 2</a></center>
-        </div>
-        <div id="navbar" class="navbar-collapse collapse">
-            <div class="nav navbar-nav">
-            <ul>
-                <li>Principal</li>
-                <li>Americana</li>
-                <li>Price</li>
-                <li>Constante</li>
-            </ul>
-            </div>
-        </div><!--/.navbar-collapse -->
-      </div>
-    </nav>
+       <%@ include file="WEB-INF/jspf/header.jspf"%>
         <br><br>
     <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="jumbotron" align="center">
@@ -53,7 +29,7 @@
       </div>
     </div>
     
-    <div class="container">
+    <div class="container" id="cont">
         <form class="form-inline" align="center">
              <div class="form-group">
             <label for="vlDivida">Dívida</label>

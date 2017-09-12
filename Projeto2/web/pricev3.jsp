@@ -12,24 +12,42 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Amortização Price</title>
+        <head>   
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    </head>
     </head>
     <body>
-        <h1><center>Tabela Price</center></h1>
-        
-        <!-- Criação do formulário de amortização price -->
-        <center>
-            <div>
-                <form name="frmPrice">
-                    Valor:<br/>
-                    <input type="text" name="txtSaldo" placeholder="Digite o valor do empréstimo"/>
-                    <br/>
-                    Tempo(meses):<br/>
-                    <input type="text" name="txtPeriodo" placeholder="Digite o período para quitar"/>
-                    <br/>
-                    Taxa de Juros:<br/>
-                    <input type="text" name="txtJuros" placeholder="Digite a taxa de juros"/>
-                    <br/>
-                    <input type="submit" name="btnCalcular" value="Calcular"/>
+        <%@ include file="WEB-INF/jspf/header.jspf"%>
+        <br><br>
+        <!-- Main jumbotron for a primary marketing message or call to action -->
+        <div class="jumbotron" align="center">
+          <div class="container">
+            <h1>Amortização Price</h1>
+          <p align="justify">Os financiamentos utilizando a tabela Price são oferecidos com o propósito de prestações fixas ao longo do período de quitação do bem, sem aumento por algum tipo de correção (dependendo do contrato de financiamento). O método Price consiste em calcular prestações fixas.</p>
+           <p><a class="btn btn-primary btn-lg" href="#" role="button"> Saiba mais &raquo;</a></p>
+          </div>
+        </div>
+    
+    <div class="container">
+        <form class="form-inline" align="center">
+             <div class="form-group">
+                    Valor:
+                    <input type="text" name="txtSaldo" class="form-control" placeholder="Digite o valor do empréstimo"/>
+             </div>
+              <div class="form-group">
+                    Tempo(meses):
+                    <input type="text" name="txtPeriodo" class="form-control" placeholder="Digite o período para quitar"/>
+              </div>
+                <div class="form-group">
+                    Taxa de Juros:
+                    <input type="text" name="txtJuros"  class="form-control" placeholder="Digite a taxa de juros"/>
+               </div>
+            <input type="submit" name="btnCalcular" class="btn btn-default" value="Gerar tabela"/>
                 </form>
             </div>
             <br/>
@@ -72,13 +90,16 @@
                     novoSaldo[0] = saldo - novaAmortizacao[0];
                     
                 %>            
-                    <table border='1'>
+    <div class="container">
+                    <table class="table">
                                 <tr>
-                                    <th >Mês</th>
-                                    <th >Saldo Devedor</th>
-                                    <th >Amortização</th>
-                                    <th >Juros</th>
-                                    <th >Prestação</th>
+                               
+                                    <th>Mês</th>
+                                    <th>Saldo Devedor</th>
+                                    <th>Amortização</th>
+                                    <th>Juros</th>
+                                    <th>Prestação</th>
+                                
                                 </tr> 
                                 <tr>
                                     <td><center>0</center></td>
@@ -132,6 +153,7 @@
             catch(Exception ex){ //devolvendo erro ao usuário caso tenha digitado letras%>
             <span style="color: red"><h2>Digite apenas números!!!</h2></span>
             <%}%>
+    </div>
         </center>
     </body>
 </html>

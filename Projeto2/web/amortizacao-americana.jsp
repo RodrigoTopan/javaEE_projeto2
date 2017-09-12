@@ -19,35 +19,11 @@
         <title>Amortização Americana</title>
     </head>
     <body>
- 
-
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">JAVA EE PROJETO 2</a></center>
-        </div>
-        <div id="navbar" class="navbar-collapse collapse">
-            <div class="nav navbar-nav">
-            <ul>
-                <li>Principal</li>
-                <li>Americana</li>
-                <li>Price</li>
-                <li>Constante</li>
-            </ul>
-            </div>
-        </div><!--/.navbar-collapse -->
-      </div>
-    </nav>
+    <%@ include file="WEB-INF/jspf/header.jspf"%>  
     <br><br>
     <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="jumbotron" align="center">
-      <div class="container">
+      <div class="container" id="cont">
         <h1>Amortização Americana</h1>
         <p align="justify">O Sistema Americano de Amortização é um tipo de quitação de empréstimo que favorece aqueles que desejam pagar o valor principal através de uma única parcela, porém os juros devem ser pagos periodicamente ou, dependendo do contrato firmado entre as partes, os juros são capitalizados e pagos junto ao valor principal.</p>
         <p><a class="btn btn-primary btn-lg" href="#" role="button"> Saiba mais &raquo;</a></p>
