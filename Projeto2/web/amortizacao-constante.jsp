@@ -32,15 +32,15 @@
     <div class="container" id="cont">
         <form class="form-inline" align="center">
              <div class="form-group">
-            <label for="vlDivida">Dívida</label>
+            Dívida:
             <input type="text" class="form-control" name="vlDivida" placeholder="Digite o valor da dívida(R$)"/>
              </div>
             <div class="form-group">
-            <label for="juros">Juros</label>
+            Juros:
             <input type="text" class="form-control" name="juros" placeholder="Digite o valor da taxa de juros"/>
             </div>
             <div class="form-group">
-            <label for="tempo"> Parcelas(Meses) </label>
+            Parcelas(Meses):
             <input type="text" class="form-control" name="tempo" placeholder="Digite a quantidade de parcelas"/>
             </div>
             <input type="submit" name="btnCalcular" class="btn btn-default" value="Exibir tabela"/>
@@ -119,7 +119,7 @@
               </table>
             <%}%> 
         <%}catch(Exception ex){%>
-        <center><span style="color: red"><h2>Digite apenas números!!</h2></span></center>
+        <center><h2><span style="color: red">Digite apenas números!!</span></h2></center>
                <%}%>
     </div>
     </body>

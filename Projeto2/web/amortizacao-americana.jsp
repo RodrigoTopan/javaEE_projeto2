@@ -131,8 +131,8 @@
               
             <%}
             catch(Exception ex){ //devolvendo erro ao usuário caso tenha digitado letras%>
-            <center><span style="color: red"><h2>Digite apenas números!!</h2></span></center>
+            <center><h2><span style="color: red">Digite apenas números!!</span></h2></center>
             <%}%>
-        </center>
+    </div>
     </body>
 </html>
