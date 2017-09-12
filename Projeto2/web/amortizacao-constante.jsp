@@ -118,10 +118,9 @@
                     </tr>
               </table>
             <%}%> 
-        <%}catch(Exception ex){
-                out.println("Número(s) invalido(S)");
-               }
-            %>
+        <%}catch(Exception ex){%>
+        <center><span style="color: red"><h2>Digite apenas números!!</h2></span></center>
+               <%}%>
     </div>
     </body>
 </html>
