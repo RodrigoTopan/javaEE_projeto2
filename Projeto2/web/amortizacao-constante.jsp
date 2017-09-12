@@ -114,7 +114,7 @@
                     <%}%>
                     </tr>
                     <tr>
-                        <td>Total:</td><td><%=contSaldo%></td><td><%=contAmortizacao%></td><td><%=contJuros%></td><td><%=contPrestacao%></td>
+                        <td>Total:</td><td><%=contSaldo%></td><td><%=(contAmortizacao - amortizacao)%></td><td><%=contJuros%></td><td><%=contPrestacao%></td>
                     </tr>
               </table>
             <%}%> 

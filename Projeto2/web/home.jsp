@@ -89,7 +89,7 @@
         <h2 class="mdl-card__title-text"></h2>
       </div>
       <div class="mdl-card__supporting-text">
-          <h2>Rodrigo Alvis</h2>
+          <h2>Rodrigo Augusto</h2>
           <h4> 4ºCiclo ADS - Vespertino</h4>
           <h4> Amortização Price </h4>
       </div>
