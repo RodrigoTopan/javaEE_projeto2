@@ -56,7 +56,7 @@
       <div class="container">
         <h1>Sistemas de amortização</h1>
         <p>Hoje nós iremos apresentar a solução para os seus problemas financeiros.<br>
-        Gere uma tabela para as suas financias e aumente o poder para gerir o seu dinheiro. Fácil e Rápido. </p>
+        Gere uma tabela para as suas finanças e aumente o poder para gerir o seu dinheiro. Fácil e Rápido. </p>
       </div>
     </div>
   
