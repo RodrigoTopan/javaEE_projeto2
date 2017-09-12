@@ -5,6 +5,7 @@
 --%>
 
 <%@page import="java.text.DecimalFormat"%>
+<%@page import="static java.lang.Math.pow"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -34,7 +35,8 @@
             <br/>
             
             <%
-            
+            //criando variaveis "totais"(somatorias).
+                double totjur=0,totprest=0,totamort=0;
             //iniciando try/ catch para criar tab. de amortização
             try
             {
@@ -72,11 +74,11 @@
                 %>            
                     <table border='1'>
                                 <tr>
-                                    <th bgcolor="YELLOW">Mês</th>
-                                    <th bgcolor="YELLOW">Saldo Devedor</th>
-                                    <th bgcolor="YELLOW">Amortização</th>
-                                    <th bgcolor="YELLOW">Juros</th>
-                                    <th bgcolor="YELLOW">Prestação</th>
+                                    <th >Mês</th>
+                                    <th >Saldo Devedor</th>
+                                    <th >Amortização</th>
+                                    <th >Juros</th>
+                                    <th >Prestação</th>
                                 </tr> 
                                 <tr>
                                     <td><center>0</center></td>
@@ -99,7 +101,13 @@
                                 novoJuros[i] = novoSaldo[i - 1] * (juros / 100); //calculando novo juros com saldo devedor novo
                                 novaAmortizacao[i] = PMT - novoJuros[i]; //nova amortização com base nos novos juros
                                 novoSaldo[i] = novoSaldo[i - 1] - novaAmortizacao[i]; //por fim, novo saldo para realizar calculo para próximo mês
-                            
+                               
+                                //somando resultados
+                                totprest=PMT*periodo;
+                                totjur = totprest-saldo ;
+                                //if(i>1){
+                                totamort= saldo;  
+                                //}
                             %>
                                 <tr>
                                     <td><center><%= (i + 1) %></center></td>
@@ -109,7 +117,12 @@
                                     <td><center><%= formata.format(PMT) %></center></td>
                                 </tr> 
                             <%}%>
-                            </table>
+                            <td><center>Total</center></td>
+                            <td><center>-</center></td>
+                            <td><center><%= formata.format(totamort)%></center></td>
+                            <td><center><%= formata.format(totjur)%></center></td>
+                            <td><center><%= formata.format(totprest)%></center></td>
+                    </table>
                         <%}%>  
                 
                     
