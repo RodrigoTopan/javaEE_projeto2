@@ -54,14 +54,12 @@
     <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="jumbotron" align="center">
       <div class="container">
-        <h1>Hello, world!</h1>
+        <h1>Sistemas de amortização</h1>
         <p>Hoje nós iremos apresentar a solução para os seus problemas financeiros.<br>
         Gere uma tabela para as suas financias e aumente o poder para gerir o seu dinheiro. Fácil e Rápido. </p>
-        <p><a class="btn btn-primary btn-lg" href="#" role="button"> Saiba mais &raquo;</a></p>
       </div>
     </div>
   
-    <h1 align="center">Amortizações</h1>
     <hr>
     <div class="container">
       <!-- Example row of columns -->

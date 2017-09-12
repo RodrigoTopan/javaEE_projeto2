@@ -26,7 +26,7 @@
       <div class="container" id="cont">
         <h1>Amortização Americana</h1>
         <p align="justify">O Sistema Americano de Amortização é um tipo de quitação de empréstimo que favorece aqueles que desejam pagar o valor principal através de uma única parcela, porém os juros devem ser pagos periodicamente ou, dependendo do contrato firmado entre as partes, os juros são capitalizados e pagos junto ao valor principal.</p>
-        <p><a class="btn btn-primary btn-lg" href="#" role="button"> Saiba mais &raquo;</a></p>
+        <p><a class="btn btn-primary btn-lg" href="http://brasilescola.uol.com.br/matematica/sistema-americano-amortizacao.htm" role="button"> Saiba mais &raquo;</a></p>
       </div>
     </div>
     <div class="container">
@@ -72,11 +72,11 @@
                 %>            
                     <table class="table">
                                 <tr>
-                                    <th>Mês</th>
-                                    <th>Saldo Devedor</th>
-                                    <th>Amortização</th>
-                                    <th>Juros</th>
-                                    <th>Prestação</th>
+                                    <th><center>Mês</center></th>
+                                    <th><center>Saldo Devedor</center></th>
+                                    <th><center>Amortização</center></th>
+                                    <th><center>Juros</center></th>
+                                    <th><center>Prestação</center></th>
                                 </tr>
                     <%  CalculoJuros = saldo * (juros / 100); //calculo para encontrar os juros mensais
                         

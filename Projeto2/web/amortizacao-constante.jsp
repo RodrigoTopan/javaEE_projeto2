@@ -25,7 +25,7 @@
       <div class="container">
         <h1>Amortização Constante</h1>
        <p align="justify"> As instituições financeiras oferecem um capital que deverá ser devolvido com juros durante o período pré-determinado. O funcionamento do sistema de amortizações constantes, que consiste no pagamento da dívida baseada em parcelas de amortizações iguais com prestações e juros decrescentes. </p>
-        <p><a class="btn btn-primary btn-lg" href="#" role="button"> Saiba mais &raquo;</a></p>
+        <p><a class="btn btn-primary btn-lg" href="http://brasilescola.uol.com.br/matematica/sac-sistema-amortizacoes-constantes.htm" role="button"> Saiba mais &raquo;</a></p>
       </div>
     </div>
     

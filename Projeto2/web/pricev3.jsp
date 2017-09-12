@@ -29,7 +29,7 @@
           <div class="container">
             <h1>Amortização Price</h1>
           <p align="justify">Os financiamentos utilizando a tabela Price são oferecidos com o propósito de prestações fixas ao longo do período de quitação do bem, sem aumento por algum tipo de correção (dependendo do contrato de financiamento). O método Price consiste em calcular prestações fixas.</p>
-           <p><a class="btn btn-primary btn-lg" href="#" role="button"> Saiba mais &raquo;</a></p>
+           <p><a class="btn btn-primary btn-lg" href="http://brasilescola.uol.com.br/matematica/financiamentos-utilizando-tabela-price.htm" role="button"> Saiba mais &raquo;</a></p>
           </div>
         </div>
     
@@ -93,13 +93,11 @@
     <div class="container">
                     <table class="table">
                                 <tr>
-                               
-                                    <th>Mês</th>
-                                    <th>Saldo Devedor</th>
-                                    <th>Amortização</th>
-                                    <th>Juros</th>
-                                    <th>Prestação</th>
-                                
+                                    <th><center>Mês</center></th>
+                                    <th><center>Saldo Devedor</center></th>
+                                    <th><center>Amortização</center></th>
+                                    <th><center>Juros</center></th>
+                                    <th><center>Prestação</center></th>                                
                                 </tr> 
                                 <tr>
                                     <td><center>0</center></td>
